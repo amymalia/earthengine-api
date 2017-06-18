@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+An example web page that creates and displays a custom Google Maps API Map Type
+for Earth Engine map tiles.  See Google Maps documentation on Custom Map Types
+for details.
+-->
+<html>
+  <head>
+    <title>SRTM</title>
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Load the Google Maps API. -->
+    <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+
+    <!-- Load our JavaScript file. -->
+    <script src="/static/script.js"></script>
+  </head>
+  <body>
+    <!-- The element into which we render the Google Map. -->
+    <div style="position: relative">
+      <div><img style="width: 100%; height: 200px;" class="ui fluid image" src="http://wikitravel.org/upload/shared//b/b6/Royal_Natal_National_Park_Banner.jpg">
+      </div>
+      <div style="text-align: center">
+        <img style="margin-top:-200px; margin-left:auto; margin-right:auto; height: 200px; width: auto; position: absolute" src="https://sa-media-2017.s3.amazonaws.com/media/images/hotmap.width-800.png?AWSAccessKeyId=AKIAJQG3YOIUOOAQEQ4Q&Signature=9D%2BHQxX1dD9Vag6oNfCcH6Os41s%3D&Expires=1497092374">
+      </div>
+    </div>
+    <div style= "margin: 0px; border-radius: 0px" class="ui borderless inverted yellow menu">
+      <div class="ui container">
+        <a class="item">Map</a>
+      </div>
+    </div>
+    <div class="ui padded container segment">
+      <div id="map" style="width: 640px; height: 480px;"></div>
+    </div>
+
+    <!-- Boot our application once the body loads. -->
+    <script>
+      /**
+       * Here we get the mapid and token for the map tiles that were generated
+       * by Earth Engine using the Python script server.py and injected using
+       * the Jinja2 templating engine.
+       */
+      initialize('{{ mapid }}', '{{ token }}');
+    </script>
+  </body>
+</html>

@@ -11,13 +11,13 @@ var initialize = function(mapId, token) {
       url += '?token=' + token;
       return url;
     },
-    tileSize: new google.maps.Size(256, 256)
+    tileSize: new google.maps.Size(500, 500)
   };
 
   // Create the map type.
   var mapType = new google.maps.ImageMapType(eeMapOptions);
 
-  var myLatLng = new google.maps.LatLng(-34.397, 150.644);
+  var myLatLng = new google.maps.LatLng(21.3069, -157.8583);
   var mapOptions = {
     center: myLatLng,
     zoom: 8,
