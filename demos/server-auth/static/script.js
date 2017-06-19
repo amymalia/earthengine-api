@@ -15,12 +15,12 @@ function initMap() {
 
   var myLatLng = {lat: 36.18, lng: -121.62};
   //var image = 'https://s17-us2.ixquick.com/cgi-bin/serveimage?url=https%3A%2F%2Fdata.256media.ie%2Fwp-content%2Fuploads%2F2015%2F07%2Ftumblr_mimi12jHA01ruaoizo1_500.gif&sp=115735941e4f3a0d297108bb6b5d405e';
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    //icon: image,
-    title: 'Helloooo!'
-  })
+//   var marker = new google.maps.Marker({
+//     position: myLatLng,
+//     map: map,
+//     //icon: image,
+//     title: 'Helloooo!'
+//   })
   var HotSpots = new google.maps.KmlLayer({
     url: 'https://storage.googleapis.com/hotmap-demo/test.kml',
     map: map
